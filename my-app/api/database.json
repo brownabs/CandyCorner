@@ -1,0 +1,115 @@
+{
+  "storeArray": [
+    {
+      "id": 1,
+      "name": "Kandy Kane",
+      "address": "Kandy Kane Lane"
+    },
+    {
+      "id": 2,
+      "name": "Santa's Little Helper",
+      "address": "North Pole"
+    }
+  ],
+  "employeeArray": [
+    {
+      "id": 1,
+      "name": "Elf 1"
+    },
+    {
+      "id": 2,
+      "name": "Elf 2"
+    },
+    {
+      "id": 3,
+      "name": "Elf 3"
+    },
+    {
+      "id": 4,
+      "name": "Elf 4"
+    }
+  ],
+  "candyTypeArray": [
+    {
+      "id": 1,
+      "type": "Lollipops and Suckers🍭"
+    },
+    {
+      "id": 2,
+      "type": "Jelly Beans"
+    },
+    {
+      "id": 3,
+      "type": "Rock Candy and Sugra Swizzle Sticks"
+    },
+    {
+      "id": 4,
+      "type": "Gummy and Chewy Candy"
+    },
+    {
+      "id": 5,
+      "type": "Big Candy/Giant Candy"
+    },
+    {
+      "id": 6,
+      "type": "Bite Size Candy"
+    }
+  ],
+  "candyArray": [
+    {
+      "id": 2,
+      "candyType": 1,
+      "name": "Charms Blow Pops"
+    },
+    {
+      "id": 3,
+      "candyType": 1,
+      "name": "Ring Pops"
+    },
+    {
+      "id": 4,
+      "candyType": 1,
+      "name": "Tootsie Pops"
+    },
+    {
+      "id": 5,
+      "candyType": 2,
+      "name": "Jolly Rancher Jelly Beans"
+    },
+    {
+      "id": 6,
+      "candyType": 2,
+      "name": "Welch's Assorted Jelly Beans"
+    },
+    {
+      "id": 7,
+      "candyType": 2,
+      "name": "Jelly Belly Jelly Beans"
+    },
+    {
+      "id": 8,
+      "candyType": 3,
+      "name": "Rock Candy Crystal Sticks"
+    },
+    {
+      "id": 9,
+      "candyType": 3,
+      "name": "Rainbow Confetti Rock Candy"
+    },
+    {
+      "id": 10,
+      "candyType": 3,
+      "name": "Rock Candy Chewy Nuggets"
+    },
+    {
+      "id": 11,
+      "candyType": 4,
+      "name": "Jumbo Gummy Bears 3kg Bag"
+    },
+    {
+      "id": 13,
+      "candyType": 4,
+      "name": "Harribo Gold Bears 5lb Bag"
+    }
+  ]
+}

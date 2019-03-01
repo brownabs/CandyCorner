@@ -11,7 +11,7 @@ class CandyList extends Component {
                     this.props.TacoCandy.map(candy => //could possibly be a forEach
                         //think of candyObject as a variable that holds the argument we're passing through 
                         
-                        <Candy 
+                        <Candy
                         candyTypes = {this.props.candyTypes}
                         candyObject = {candy} //curly braces are for React, in js it would be candyObject = candy
                         discontinueCandy = {this.props.discontinueCandy} //must call this because Candy.js is going to use it, otherwise it's undefined

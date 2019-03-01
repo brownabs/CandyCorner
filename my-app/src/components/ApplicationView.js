@@ -3,53 +3,56 @@ import { Route } from 'react-router-dom'
 import EmployeeList from './EmployeeList';
 import StoreList from './StoreList';
 import CandyList from './CandyList';
+import StoreManager from '../modules/StoreManager';
+import EmployeeManager from '../modules/EmployeeManager';
+import CandyManager from '../modules/CandyManager';
+import CandyTypeManager from '../modules/CandyTypeManager';
 
+//where the state is where you have to modify it
 //application views manages state
 //“Keys only need to be unique among sibling elements in the same array. 
 // They don’t need to be unique across the whole application or even a single component.
 
 export default class ApplicationView extends Component {
 
-    state = { //maybe a TA, Steve question
+    state = { 
         stores: [],
         employees: [],
         candyTypes: [],
         candyArray: []
     }
-//where the state is where you have to modify it
+
     fireEmployee = (id) => {
-        fetch(`http://localhost:5002/employeeArray/${id}`, {
-            "method": "DELETE"
-    })
-    .then(() => fetch("http://localhost:5002/employeeArray"))
-    .then(r => r.json())
-    .then(employees => this.setState({employees: employees}))
+
+        return EmployeeManager.removeAndList(id)
+            .then(() => EmployeeManager.getAllEmployees())
+            .then(employees => this.setState({ employees: employees }))
+
     }
 
     discontinueCandy = (id) => {
-        fetch(`http://localhost:5002/candyArray/${id}`, {
-            "method": "DELETE"
-    })
-    .then(() => fetch("http://localhost:5002/candyArray"))
-    .then(r => r.json())
-    .then(candy => this.setState({candyArray: candy}))
+      
+        CandyManager.removeAndListCandy(id)
+        .then(() => CandyManager.getAllCandies())
+        .then(candy => this.setState({ candyArray: candy }))
     }
+
     componentDidMount() { //okay you're skeleton is ready
-    console.log("componentDidMount -- ApplicationViews")
+        console.log("componentDidMount -- ApplicationViews")
         const newState = {}
 
-        fetch("http://localhost:5002/storeArray")
-            .then(r => r.json())
-            .then(bill => newState.stores = bill) //
-            .then(() => fetch("http://localhost:5002/employeeArray")
-            .then(r => r.json()))
+        StoreManager.getAllStores()
+            .then(bill => newState.stores = bill)
+
+        EmployeeManager.getAllEmployees()
             .then(employees => newState.employees = employees)
-            .then(() => fetch("http://localhost:5002/candyTypeArray")
-            .then(r => r.json()))
+
+        CandyManager.getAllCandies()
+            .then(candies => newState.candyArray = candies)
+
+        CandyTypeManager.getAllCandyTypes()
             .then(candyTypes => newState.candyTypes = candyTypes)
-            .then(() => fetch("http://localhost:5002/candyArray")
-            .then(r => r.json()))
-            .then(candies => newState.candyArray = candies) //new.State.candyArray needs to have the same name as 
+
             .then(() => this.setState(newState))
     }
 
@@ -61,18 +64,18 @@ export default class ApplicationView extends Component {
                     return <StoreList stores={this.state.stores} />
                 }} />
                 <Route exact path="/employees" render={(props) => {
-                    return <EmployeeList 
-                    fireEmployee={this.fireEmployee}
-                    employees={this.state.employees} />
+                    return <EmployeeList
+                        fireEmployee={this.fireEmployee}
+                        employees={this.state.employees} />
                 }} />
                 <Route exact path="/candies" render={(props) => {
-                    return <CandyList 
-                    discontinueCandy={this.discontinueCandy}
-                    TacoCandy={this.state.candyArray} 
-                                      candyTypes={this.state.candyTypes}
-                         />
+                    return <CandyList
+                        discontinueCandy={this.discontinueCandy}
+                        TacoCandy={this.state.candyArray}
+                        candyTypes={this.state.candyTypes}
+                    />
                 }} />
             </React.Fragment>
-            )
-        }
+        )
+    }
 }

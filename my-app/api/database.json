@@ -19,14 +19,6 @@
     {
       "id": 2,
       "name": "Elf 2"
-    },
-    {
-      "id": 3,
-      "name": "Elf 3"
-    },
-    {
-      "id": 4,
-      "name": "Elf 4"
     }
   ],
   "candyTypeArray": [
@@ -72,16 +64,6 @@
       "name": "Tootsie Pops"
     },
     {
-      "id": 5,
-      "candyType": 2,
-      "name": "Jolly Rancher Jelly Beans"
-    },
-    {
-      "id": 6,
-      "candyType": 2,
-      "name": "Welch's Assorted Jelly Beans"
-    },
-    {
       "id": 7,
       "candyType": 2,
       "name": "Jelly Belly Jelly Beans"
@@ -105,11 +87,6 @@
       "id": 11,
       "candyType": 4,
       "name": "Jumbo Gummy Bears 3kg Bag"
-    },
-    {
-      "id": 13,
-      "candyType": 4,
-      "name": "Harribo Gold Bears 5lb Bag"
     }
   ]
 }
